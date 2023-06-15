@@ -32,7 +32,7 @@ function App(props) {
     key={one.id}
     id={one.id}
     on={one.on}
-    fn = {toggle}
+    fn = {()=>toggle(one.id)}
   />
     ))
   return (

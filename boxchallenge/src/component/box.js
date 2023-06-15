@@ -8,7 +8,7 @@ function Box(props){
       color:"green"
     }
     return(
-        <div onClick={()=>props.fn(props.id)} style= {styles} className='box'key={props.id}>
+        <div onClick={props.fn} style= {styles} className='box'key={props.id}>
              {props.id}
         </div>
     )
