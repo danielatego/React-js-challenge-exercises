@@ -1,28 +1,36 @@
 import React from "react";
 
 function App() {
-  const [firstName,setFirstName]= React.useState(['',''])
-  console.log(firstName)
+  const [Registration,setFirstName]= React.useState({
+    firstName:'',
+    secondName:'',
+    email:''
+  })
+  console.log(Registration)
   function handleChange(event){
-    const mama=[];
-    setFirstName([firstName[0],event.target.value])
+    setFirstName({...Registration,[event.target.name]:event.target.value})
   }
-  function handlChange(event){
-    setFirstName([event.target.value,firstName[1]])
-  }
+  
   return (
     <form>
       <input 
         type='text'
         placeholder='First Name'
         onChange={handleChange}
+        name="firstName"
       />
        <input 
         type='text'
         placeholder='Last Name'
-        onChange={handlChange}
+        onChange={handleChange}
+        name="secondName"
       />
-      
+      <input 
+        type='text'
+        placeholder='email'
+        onChange={handleChange}
+        name="email"
+      />
     </form>
   );
 }
